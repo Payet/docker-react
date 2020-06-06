@@ -7,7 +7,7 @@ services:
 
 
 before_install:
- - docker build -f Dockerfile.dev -t bpayet/docker-react 
+ - docker build -f Dockerfile.dev -t bpayet/docker-react .
 
 script:
   - docker run -e CI=true bpayet/docker-react npm run test
