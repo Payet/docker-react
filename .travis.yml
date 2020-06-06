@@ -1,3 +1,15 @@
+
 language: node_js
-node_js:
-  - 12
+
+sudo: required 
+services:
+ - docker
+
+
+before_install:
+ - docker build -f Dockerfile.dev -t bpayet/docker-react a.
+
+script:
+  - docker run -e CI=true bpayet/docker-react npm run test
+ 
+
