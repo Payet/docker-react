@@ -17,6 +17,6 @@ test('renders learn react link', () => {
 
 test('renders broken test', () => {
   const { getByText } = render(<App />);
-  const linkElement = getByText(/do not learn react/i);
+  const linkElement = getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 });
