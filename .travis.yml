@@ -13,4 +13,16 @@ before_install:
 script:
   - docker run -e CI=true bpayet/docker-react npm run test
  
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-central-1"
+  app: "react-frontend"
+  env: "ReactFrontend-env"
+  bucket_name: "elasticbeanstalk-eu-central-1-626934675359"
+  bucket_path: "react-frontend"
+  on:
+    branch: master 
+
+access_key_id: $AWS_ACCESS_KEY
+secret_access_key: $AWS_SECRET_KEY
 
